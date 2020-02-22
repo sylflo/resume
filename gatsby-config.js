@@ -1,6 +1,6 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://boring-shockley-bb8294.netlify.com',
+  URL: NETLIFY_SITE_URL = 'https://resume.sylvain-chateau.com',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
@@ -13,7 +13,7 @@ module.exports = {
     title: `Sylvain Chateau - Full stack DevOps`,
     description: `I am full stack dev passionated by DevOps especially K8s and automation`,
     author: `dev.chateau@gmail.com`,
-    siteUrl: 'https://resume.sylvain-chateau.com'
+    siteUrl,
   },
   plugins: [
     `gatsby-plugin-emotion`,
