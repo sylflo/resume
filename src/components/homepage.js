@@ -73,7 +73,7 @@ export default () => (
         <InnerContent>
           <Brand>Dev drizzle</Brand>
           <Description>
-          I am a fullstack developer passionated by DevOps.
+          I am a fullstack developer passionated about DevOps.
           My day to day tools are software like Ansible, Terraform and also Kubernetes during my spare time.
           </Description>
         </InnerContent>
