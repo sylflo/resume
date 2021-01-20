@@ -31,7 +31,7 @@
     "react-toastify": "^5.5.0"
   },
   "devDependencies": {
-    "babel-preset-gatsby": "^0.2.36",
+    "babel-preset-gatsby": "^0.11.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^2.2.1",
     "tailwind.macro": "^1.0.0-alpha.10",
