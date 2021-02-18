@@ -20,7 +20,7 @@
     "gatsby-plugin-postcss": "^2.3.13",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-robots-txt": "^1.5.1",
-    "gatsby-source-graphql": "^2.6.2",
+    "gatsby-source-graphql": "^2.14.0",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
