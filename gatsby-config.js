@@ -19,14 +19,14 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: 'gatsby-plugin-matomo',
-      options: {
-        siteId: '1',
-        matomoUrl: process.env.MATOMO_URL,
-        siteUrl,
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-matomo',
+    //   options: {
+    //     siteId: '1',
+    //     matomoUrl: process.env.MATOMO_URL,
+    //     siteUrl,
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
