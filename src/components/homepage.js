@@ -74,8 +74,8 @@ const Homepage = () => (
           <Brand>Dev drizzle</Brand>
           <Description>
             I am a fullstack developer passionated about DevOps. My day to day
-            tools are software like Ansible, Terraform and also Kubernetes
-            during my spare time.
+            tools are software like Ansible, Terraform and Docker to provision and manage
+            infrastructure and websites
           </Description>
         </InnerContent>
       </Content>

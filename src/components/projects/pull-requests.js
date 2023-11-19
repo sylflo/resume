@@ -45,9 +45,7 @@ const PullRequests = () => {
 
   const filteredPullRequests = edges.filter(
     (node) =>
-      node.node.repository.name === "kubespray" ||
-      node.node.repository.name === "kotlin-android-starter" ||
-      node.node.repository.name === "fastapi-mail" && node.node.merged
+      !node.node.url.includes("sylflo") && node.node.merged
   )
 
   return (

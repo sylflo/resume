@@ -22,12 +22,19 @@ const WorkExperience = () => (
     <Title>Work experience</Title>
     <Wrapper>
       <Grid>
+      <Item
+          title="Backend end python dev"
+          companyName="Outscale"
+          content="Development of a cloud provider. Improvement of the CI/CD to release faster as well as bug fixed for production"
+          location="Saint cloud - France"
+          date="Oct 2021 to present"
+        />
         <Item
           title="Full-Stack dev"
           companyName="Sysdream"
-          content="Mainly work on Flask/React, also provisioning on VMware vm on esxi using Terraform/Ansible"
+          content="Development of a training platform called Malice using VmWare for virtualization, Flask for the management and React for the UI. Also creation of attack/defense ctf using VmWare Ansible/Terraform and development of different challenges"
           location="Levallois-Perret - France"
-          date="Apr 2017 to Present"
+          date="Apr 2017 to Oct 2021"
         />
         <Item
           title="Android dev"
