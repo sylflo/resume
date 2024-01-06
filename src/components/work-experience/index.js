@@ -25,39 +25,35 @@ const WorkExperience = () => (
       <Item
           title="Backend end python dev"
           companyName="Outscale"
-          content="Development of a cloud provider. Improvement of the CI/CD to release faster as well as bug fixed for production"
+          content="Responsible for developing cloud orchestration, utilizing QEMU for virtualization and RabbitMQ for inter-service communication. Proficient in Python and experienced with GitLab for code management. Proactively engaged in learning deployment aspects to enhance overall understanding of operational processes."
           location="Saint cloud - France"
           date="Oct 2021 to present"
         />
         <Item
           title="Full-Stack dev"
           companyName="Sysdream"
-          content="Development of a training platform called Malice using VmWare for virtualization, Flask for the management and React for the UI. Also creation of attack/defense ctf using VmWare Ansible/Terraform and development of different challenges"
+          content="Involved in key projects focusing on cybersecurity training and event management. Played a pivotal role in the development of 'Malice', a versatile training platform, handling everything from pentest scenario creation to technical implementation with vmWare, Python, and React. Actively engaged in organizing and provisioning for Capture The Flag (CTF) events, leveraging Ansible for efficient setup and network management. Also contributed to the physical setup of these events, showcasing a well-rounded skill set in both digital and physical aspects of cybersecurity training."
           location="Levallois-Perret - France"
           date="Apr 2017 to Oct 2021"
         />
         <Item
           title="Android dev"
           companyName="Ineis"
-          content="
-            Development of a native Android application to help users manage their events. 
-            The Back-End was put in production using Nginx and Gunicorn since it was develop in Django."
+          content="Developed an Android application for event management and executed backend deployment using Django, Nginx, Gunicorn, and Ansible. Contributed to enhancing the application's performance and reliability."
           location="Paris - France"
           date="Sep 2016 to Feb 2017"
         />
         <Item
           title="Web dev"
           companyName="Webiaprod"
-          content="
-            Front end development with css and jquery, and some back end with Django. Mainly on showcase website"
+          content="Engaged in front-end development utilizing CSS and jQuery, along with back-end development in Django. Mainly focused on the development of engaging and functional showcase websites"
           location="Grenoble - France"
           date="Apr 2015 to Aug 2015"
         />
         <Item
           title="Web dev"
           companyName="Gouts de web"
-          content="
-            Development on different cms like Wordpress, Prestashop..."
+          content="Experienced in developing on a range of content management systems, including WordPress, PrestaShop, and others, showcasing versatility in adapting to different platforms"
           location="Bordeaux - France"
           date="Sep 2014 to Mar 2015"
         />
