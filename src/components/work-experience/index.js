@@ -32,7 +32,7 @@ const WorkExperience = () => (
         <Item
           title="Full-Stack dev"
           companyName="Sysdream"
-          content="Involved in key projects focusing on cybersecurity training and event management. Played a pivotal role in the development of 'Malice', a versatile training platform, handling everything from pentest scenario creation to technical implementation with vmWare, Python, and React. Actively engaged in organizing and provisioning for Capture The Flag (CTF) events, leveraging Ansible for efficient setup and network management. Also contributed to the physical setup of these events, showcasing a well-rounded skill set in both digital and physical aspects of cybersecurity training."
+          content="Involved in key projects focusing on cybersecurity training and event management. Played a pivotal role in the development of 'Malice', a versatile training platform, handling everything from pentest scenario creation to technical implementation with vmWare, Python, and React. Actively engaged in organizing and provisioning for Capture The Flag (CTF) events, leveraging Ansible for efficient setup and network management. Also contributed to the physical setup of these events, showcasing a well-rounded skill set in both digital and physical aspects of cybersecurity training. Deployed a monitoring stack with Prometheus and Grafana, handling all the configurations and settings, demonstrating comprehensive skills in system monitoring and operational efficiency"
           location="Levallois-Perret - France"
           date="Apr 2017 to Oct 2021"
         />
