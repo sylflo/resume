@@ -6,10 +6,12 @@ const Image = styled.img`
   height: 85%;
   ${tw`mx-0 my-auto`}
 `
+const logo = require("../../../static/logo.png")
+
 
 const Brand = () => (
   <Image
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kubernetes_logo_without_workmark.svg/440px-Kubernetes_logo_without_workmark.svg.png"
+    src={logo.default}
     alt="Company Logo"
   />
 )
