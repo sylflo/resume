@@ -1,6 +1,6 @@
 import React from "react"
 import tw from "twin.macro"
-import { FaTwitter, FaGithub } from "react-icons/fa"
+import { FaGithub, FaGitlab, FaLinkedin, FaTwitter} from "react-icons/fa"
 
 const List = tw.ul`
   cursor-default list-none pl-0`
@@ -18,6 +18,22 @@ const Icons = () => (
     <Item>
       <ItemLink href="https://github.com/sylflo">
         <FaGithub
+          size={20}
+          style={{ marginLeft: "0.55rem", marginTop: "0.55rem" }}
+        />
+      </ItemLink>
+    </Item>
+    <Item>
+      <ItemLink href="https://gitlab.com/sylflo">
+        <FaGitlab
+          size={20}
+          style={{ marginLeft: "0.55rem", marginTop: "0.55rem" }}
+        />
+      </ItemLink>
+    </Item>
+    <Item>
+      <ItemLink href="https://www.linkedin.com/in/sylvainchateau/">
+        <FaLinkedin
           size={20}
           style={{ marginLeft: "0.55rem", marginTop: "0.55rem" }}
         />
