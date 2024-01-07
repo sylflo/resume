@@ -16,23 +16,25 @@ const Inner = tw.div`
   mt-12
 `
 
-const Description = styled.p`
+const Description = styled.ul`
   ${tw`text-black pb-4 pt-4`}
   border-top: 2px solid black;
 `
 
 const Metadata = styled.ul`
-  ${tw`text-black pt-4`}
+  ${tw`text-black`}
 `
 
-const Item = ({ title, content, companyName, location, date }) => (
+const Item = ({ title, companyName, location, date, children }) => (
   <Inner>
     <div>
       <Title>
         {title} <br />
         <CompanyName>at {companyName}</CompanyName>
       </Title>
-      <Description>{content}</Description>
+      <Description>
+        {children}
+      </Description>
       <Metadata>
         <li>{date}</li>
         <li>{location}</li>
