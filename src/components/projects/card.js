@@ -33,11 +33,15 @@ const Card = ({ title, forkCount, starCount, description }) => (
     <BoxContent>
       <Title>{title}</Title>
       <Description>
-        {description.length > 60 ? (
-          <>{description.slice(0, 60)}...</>
-        ) : (
-          <>{description}</>
-        )}
+        {description ? (
+            description.length > 60 ? (
+              <>{description.slice(0, 60)}...</>
+            ) : (
+              <>{description}</>
+            )
+          ) : (
+            <>N/A</>
+          )}
       </Description>
     </BoxContent>
     <Stats>
