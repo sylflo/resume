@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react';
 import { useForm } from "react-hook-form"
 import { toast } from "react-toastify"
 import tw from "twin.macro"
@@ -67,27 +67,26 @@ const Submit = styled.button`
   white-space: nowrap;
 `
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+const Spinner = styled.div`
+  ${tw`border-4 border-gray-200 border-t-blue-500 rounded-full w-6 h-6 animate-spin ml-2 inline-block`}
+`;
 
 const Form = () => {
   const { handleSubmit, register } = useForm()
-  const onSubmit = (data) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const onSubmit = async(data) => {
     try {
-      fetch("/", {
+      setIsLoading(true);
+      await fetch("/api/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...data,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       })
       toast.success("Your message has been sent")
     } catch (error) {
       toast.error("An error occured please try again")
+    } finally {
+      setIsLoading(false);
     }
   }
 
@@ -95,11 +94,7 @@ const Form = () => {
     <form
       name="contact"
       onSubmit={handleSubmit(onSubmit)}
-      netlify-honeypot="bot-field"
-      data-netlify="true"
     >
-      <input type="hidden" name="bot-field" />
-      <input type="hidden" name="contact" value="contact" />
       <Field>
         <Label>Name</Label>
         <Input required {...register("name", { required: true })} type="text" />
@@ -122,7 +117,17 @@ const Form = () => {
         />
       </Field>
       <Field>
-        <Submit>Send message</Submit>
+        <Submit  disabled={isLoading}>
+          {isLoading ? (
+            <>
+              Sending...
+              <Spinner />
+            </>
+          ) : (
+            "Send message"
+          )}
+        </Submit>
+        {/* <Submit>Send message</Submit> */}
       </Field>
     </form>
   )

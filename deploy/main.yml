@@ -1,0 +1,56 @@
+- name: Deploy resume website
+  hosts: seedbox
+  vars_files:
+    - config.yml
+  vars:
+    app_name: "resume"
+    user: "seedbox"
+
+  tasks:
+    - name: Create directory /opt/{{ app_name }}
+      ansible.builtin.file:
+        path:  "/opt/{{ app_name }}"
+        state: directory
+        mode: '0755'
+        owner: "{{ user }}"
+        group: "{{ user }}"
+      become: yes
+    - name: Copy nginx conf file /opt/{{ app_name }}/nginx.conf
+      ansible.builtin.template:
+        src: "nginx_default.conf"
+        dest: /opt/{{ app_name }}/nginx.conf
+        owner: "{{ user }}"
+      become: yes
+      become_user: "{{ user }}"
+    - name: Copy compose file to /opt/{{ app_name }}/docker-compose.yml
+      ansible.builtin.template:
+        src: "docker-compose.yml"
+        dest: /opt/{{ app_name }}/docker-compose.yml
+        owner: "{{ user }}"
+      become: yes
+      become_user: "{{ user }}"
+    #Podman
+    - name: Login to private gitea registry
+      ansible.builtin.command: podman login {{ domain_name }} -u {{ gitea['username'] }} -p{{ gitea['password'] }}
+      args:
+        chdir: /opt/{{ app_name }}
+      become: yes
+      become_user: "{{ user }}"
+    - name: Pull podman containers
+      ansible.builtin.command: podman-compose pull
+      args:
+        chdir: /opt/{{ app_name }}
+      become: yes
+      become_user: "{{ user }}"
+    - name: Recreate podman containers
+      ansible.builtin.command: podman-compose up -d --force-recreate
+      args:
+        chdir: /opt/{{ app_name }}
+      become: yes
+      become_user: "{{ user }}"
+    - name: Prune podman images
+      ansible.builtin.command: podman image prune --force
+      args:
+        chdir: /opt/{{ app_name }}
+      become: yes
+      become_user: "{{ user }}"
