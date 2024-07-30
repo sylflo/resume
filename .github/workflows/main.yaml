@@ -21,7 +21,7 @@ jobs:
           context: ./frontend
           file: ./frontend/Dockerfile
           push: true
-          tags: ${{ vars.HOSTNAME }}/sylflo/resume/frontend:latest
+          tags: ${{ vars.HOSTNAME }}/sylflo/resume-frontend:latest
           build-args: |
             GITHUB_TOKEN=${{ secrets.TOKEN_GITHUB }}
           registry: ${{ vars.HOSTNAME }}
@@ -44,7 +44,7 @@ jobs:
           context: ./backend
           file: ./backend/Dockerfile
           push: true
-          tags: ${{ vars.HOSTNAME }}/sylflo/resume/backend:latest
+          tags: ${{ vars.HOSTNAME }}/sylflo/resume-backend:latest
           registry: ${{ vars.HOSTNAME }}
   #deploy:
   #  runs-on: ubuntu-latest
