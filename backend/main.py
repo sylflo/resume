@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import os
 from email.mime.text import MIMEText
-from smtplib import SMTP
+from email.utils import formatdate
+from smtplib import SMTP_SSL
 
 from fastapi import FastAPI
 from pydantic import BaseModel
@@ -31,8 +32,8 @@ def send_email(name: str, email: str, message: str):
         msg = MIMEText(f"From { name }\n{ message }", text_subtype)
         msg["Subject"] = subject
         msg["From"] = email
-        with SMTP(MAIL_SERVER, MAIL_PORT) as conn:
-            conn.starttls()  # Start TLS for security
+        msg["Date"] = formatdate(localtime=True)  # Add the Date header
+        with SMTP_SSL(MAIL_SERVER, MAIL_PORT) as conn:
             conn.login(MAIL_USERNAME, MAIL_PASSWORD)
             conn.sendmail(MAIL_USERNAME, destination, msg.as_string())
             return True
@@ -40,10 +41,11 @@ def send_email(name: str, email: str, message: str):
         print(f"Error: {e}")
         return False
 
+send_email("NAME", "toto@hotmail.fr", "MESSAGE")
+
 @app.post("/")
 async def root(message: Message):
     if send_email(**message.dict()):
         return {"success": True}
     else:
         return {"success": False}
-
