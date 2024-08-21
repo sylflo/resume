@@ -41,8 +41,6 @@ def send_email(name: str, email: str, message: str):
         print(f"Error: {e}")
         return False
 
-send_email("NAME", "toto@hotmail.fr", "MESSAGE")
-
 @app.post("/")
 async def root(message: Message):
     if send_email(**message.dict()):
