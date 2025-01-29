@@ -32,7 +32,7 @@ const WorkExperience = () => (
         title="Backend end python dev"
         companyName="Outscale"
         location="Saint cloud - France"
-        date="Oct 2021 to present"
+        date="Oct 2021 to Dec 2024"
       >
         <InnerDescription>
           Responsible for developing cloud orchestration, utilizing QEMU for virtualization and RabbitMQ for inter-service communication.
