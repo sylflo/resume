@@ -58,6 +58,7 @@ const Navbar = ({ navbarState, handleNavbar }) => (
               {link.name}
             </a>
           ))}
+            <a href="resume.pdf" download>CV</a>
         </NavLinks>
         <BurgerWrapper>
           <BurgerMenu navbarState={navbarState} handleNavbar={handleNavbar} />
